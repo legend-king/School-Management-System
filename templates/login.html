@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en" dir = "ltr">
+  <head>
+      <meta charset=" utf-8">
+    <title> Login </title>
+    {% load static %}
+    {% comment %} <link rel="stylesheet" href="{%static 'login.css'%}" type="text/css" media="screen" > {% endcomment %}
+  </head>
+  
+  <body>
+<form class="box" action="/login" method = "post">
+    <h1> Login </h1>
+    {% csrf_token %}
+    <input type="text" name = "regno" placeholder="Id" >
+    <input type="password" name = "password" placeholder="password" >
+    <br>
+    {% if show == 1 %}
+    <p>Invalid credentials</p>
+    {% endif %}
+    <input type="submit" >
+
+
+
+</form>
+</body>
+</html>

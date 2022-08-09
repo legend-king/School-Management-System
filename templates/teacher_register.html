@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en" dir = "ltr">
+  <head>
+      <meta charset=" utf-8">
+    <title> Teacher Register </title>
+    {% load static %}
+    {% comment %} <link rel="stylesheet" href="{%static 'login.css'%}" type="text/css" media="screen" > {% endcomment %}
+  </head>
+  
+  <body>
+<form class="box" action="/teacher_register" method = "post">
+    <h1> Teacher Register </h1>
+    {% csrf_token %}
+    <input type="text" name = "name" placeholder="name" >
+    <input type="text" name = "teacherid" placeholder="Id" >
+    <input type="text" name = "contact" placeholder="contact" >
+    <input type="text" name = "subject" placeholder="subject" >
+    <input type="text" name = "classestaught" placeholder="classestaught" >
+    <input type="password" name = "password" placeholder="password" >
+    <br>
+    {% if show == 1 %}
+    <p>Teacher with id already exists</p>
+    {% endif %}
+    <input type="submit" >
+
+
+
+</form>
+</body>
+</html>
